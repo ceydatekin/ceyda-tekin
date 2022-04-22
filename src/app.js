@@ -3,6 +3,7 @@ const express = require('express');
 const geocode = require('./utils/geocode');
 const weather = require('./utils/weather');
 
+
 const PORT = process.env.PORT || 3000;
 
 const app = express();
@@ -13,10 +14,8 @@ app.get('/', (req, res) => {
         name : "Ceyda" ,
         surname : "Tekin"   
     }
-
-   res.render(index.html, (err, res)=> {
-
-   })
+    res.render({html : './index.html'})
+ 
 })
 
 app.get('/test_text', (req, res) => {
