@@ -14,7 +14,11 @@ app.get('/', (req, res) => {
         name : "Ceyda" ,
         surname : "Tekin"   
     }
-    res.render({html : './index.html'})
+    // res.render ('index.html', {filename :  index.html},(fn)=>{
+
+    // })
+    res.send("<html><body><H1>Ceyda Tekin </H1> <h2>18360859025</h2></body></html>")
+  
  
 })
 
@@ -56,14 +60,7 @@ app.get('/test_weather', (req, res) => {
     })
 })
 
-app.get('/info', (req, res) => {
-    const jsonData = {
-        name : req.query.name,
-        surname : req.query.surname,
-        age : req.query.age
-    }
-    res.send(jsonData)
-})
+
 
 
 
