@@ -13,10 +13,27 @@ app.get('/', (req, res) => {
         name : "Ceyda" ,
         surname : "Tekin"   
     }
-    res.send(information)
+
+   res.render(index.html, (err, res)=> {
+
+   })
 })
 
-app.get('/weather', (req, res) => {
+app.get('/test_text', (req, res) => {
+    res.send("18360859025")
+})
+app.get('/test_html', (req, res) => {
+    res.send("<html><body><H1>Ceyda Tekin </H1></body></html>")
+})
+app.get('/test_json', (req, res) => {
+    const information = {
+        number : 18360859025,
+        name : "Ceyda" ,
+        surname : "Tekin"   
+    }
+    res.send(information)
+})
+app.get('/test_weather', (req, res) => {
     // res.send(req.query.city)
     const city = req.query.city;
     geocode(city, (err, {enlem, boylam, konum}) => {
@@ -32,6 +49,7 @@ app.get('/weather', (req, res) => {
                 konum : konum,
                 sicaklik : data.temperature,
                 nem : data.humidity,
+                basinc : data.pressure,
                 hava_durumu : data.weather_descriptions[0]
             }
             res.send(showData)

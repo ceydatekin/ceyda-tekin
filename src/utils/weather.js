@@ -7,7 +7,7 @@ const weather = (enlem, boylam, callback) => {
         if(err){
             callback('The service is down', undefined);
         }
-        // console.log(body.current)
+        console.log(body.current)
         callback(undefined, body.current)
     })
 }
