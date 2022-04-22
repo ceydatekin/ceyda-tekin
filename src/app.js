@@ -18,8 +18,7 @@ app.get('/', (req, res) => {
 
     // })
     res.send("<html><body><H1>Ceyda Tekin </H1> <h2>18360859025</h2></body></html>")
-  
- 
+
 })
 
 app.get('/test_text', (req, res) => {
